@@ -4,6 +4,8 @@
 
 <c:url value="/board/list" var="listUrl"></c:url>
 <c:url value="/board/insert" var="insertUrl"></c:url>
+<c:url value="/member/signup" var="signUpUrl"></c:url>
+<c:url value="/member/list" var="memberListUrl"></c:url>
 
 <nav class="navbar navbar-expand-md navbar-light bg-light mb-3">
   <div class="container">
@@ -19,10 +21,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link ${current == 'list' ? 'active' : '' }" href="${listUrl }">목록보기</a>
+        	<a class="nav-link ${current == 'list' ? 'active' : '' }" href="${listUrl }">목록보기</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ${current == 'insert' ? 'active' : '' }" href="${insertUrl }">글쓰기</a>
+        	<a class="nav-link ${current == 'insert' ? 'active' : '' }" href="${insertUrl }">글쓰기</a>
+        </li>
+        <li class="nav-item">
+        	<a class="nav-link ${current == 'signup' ? 'active' : '' }" href="${signUpUrl }">회원가입</a>
+        </li>
+        <li class="nav-item">
+        	<a class="nav-link ${current == 'memberList' ? 'active' : '' }" href="${memberListUrl }">회원목록</a>
         </li>
       </ul>
       
