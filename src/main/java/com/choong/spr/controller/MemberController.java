@@ -87,7 +87,7 @@ public class MemberController {
 		model.addAttribute("member", member);
 	}
 	
-	@PostMapping("edit")
+	@PostMapping("modify")
 	public String editMember(MemberDto dto, String oldPassword, RedirectAttributes rttr) {
 		boolean success = service.editMember(dto, oldPassword);
 		
@@ -114,5 +114,10 @@ public class MemberController {
 			rttr.addAttribute("id", member.getId());
 			return "redirect:/member/get";
 		}
+	}
+	
+	@GetMapping("login")
+	public void loginPage() {
+		
 	}
 }

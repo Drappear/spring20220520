@@ -220,7 +220,7 @@
 						aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<form id="form2" action="${appRoot }/member/edit" method="post">
+					<form id="form2" action="${appRoot }/member/modify" method="post">
 						<input type="hidden" value="${member.id }" name="id"/>
 						<input type="hidden" name="password"/>
 						<input type="hidden" name="email"/>

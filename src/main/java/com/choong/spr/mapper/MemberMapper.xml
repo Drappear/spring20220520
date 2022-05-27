@@ -51,4 +51,16 @@
 		DELETE FROM Member
 		WHERE id = #{id}
 	</delete>
+	
+	<!-- 권한 추가 -->
+	<insert id="insertAuth">
+		INSERT INTO Auth(memberId, role)
+		VALUES (#{id}, #{auth})
+	</insert>
+	
+	<!-- 권한 삭제 -->
+	<delete id="deleteAuthById">
+		DELETE FROM Auth
+		WHERE id = #{id}
+	</delete>
 </mapper>
