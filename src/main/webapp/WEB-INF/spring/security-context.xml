@@ -19,9 +19,9 @@
 		<security:intercept-url pattern="/board/modify" access="isAuthenticated()"/>
 		<security:intercept-url pattern="/board/remove" access="isAuthenticated()"/>
 		
-		<security:intercept-url pattern="/reply/insert" access="isAuthenticated()"/>
-		<security:intercept-url pattern="/reply/modify" access="isAuthenticated()"/>
-		<security:intercept-url pattern="/reply/remove" access="isAuthenticated()"/>
+		<!-- <security:intercept-url pattern="/reply/insert" access="isAuthenticated()"/> -->
+		<!-- <security:intercept-url pattern="/reply/modify" access="isAuthenticated()"/> -->
+		<!-- <security:intercept-url pattern="/reply/remove" access="isAuthenticated()"/> -->
 		
 		<security:intercept-url pattern="/member/list" access="hasRole('ADMIN')"/>
 		<security:intercept-url pattern="/member/get" access="isAuthenticated()"/>

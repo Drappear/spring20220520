@@ -61,6 +61,6 @@
 	<!-- 권한 삭제 -->
 	<delete id="deleteAuthById">
 		DELETE FROM Auth
-		WHERE id = #{id}
+		WHERE memberId = #{id}
 	</delete>
 </mapper>

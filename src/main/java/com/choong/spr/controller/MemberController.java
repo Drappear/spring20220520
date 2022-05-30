@@ -88,8 +88,8 @@ public class MemberController {
 	}
 	
 	@PostMapping("modify")
-	public String editMember(MemberDto dto, String oldPassword, RedirectAttributes rttr) {
-		boolean success = service.editMember(dto, oldPassword);
+	public String modifyMember(MemberDto dto, String oldPassword, RedirectAttributes rttr) {
+		boolean success = service.modifyMember(dto, oldPassword);
 		
 		if(success) {
 			rttr.addFlashAttribute("message", "회원 정보가 수정되었습니다.");

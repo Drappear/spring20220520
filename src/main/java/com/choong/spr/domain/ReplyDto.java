@@ -8,8 +8,11 @@ import lombok.Data;
 public class ReplyDto {
 	private int id;
 	private int boardId;
+	private String memberId;
 	private String content;
+	private String writerNickName;
 	private LocalDateTime inserted;
+	private boolean own;
 
 	public String getPrettyInserted() {
 		// 24시간 이내면 시간만
