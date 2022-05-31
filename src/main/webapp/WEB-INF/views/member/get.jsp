@@ -157,7 +157,7 @@
 </script>
 </head>
 <body>
-	<my:navBar></my:navBar>
+	<my:navBar current="memberInfo"></my:navBar>
 	
 	<c:if test="${not empty message }">
 		<div class="alert alert-primary">

@@ -109,4 +109,10 @@ public class MemberService {
 		}
 		return false;
 	}
+
+	public void initMemberPw(String id) {
+		String encodedInitPassword = passwordEncoder.encode(id);
+		
+		mapper.updateInitPassword(id, encodedInitPassword);
+	}
 }
