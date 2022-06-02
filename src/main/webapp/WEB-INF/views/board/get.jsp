@@ -292,10 +292,11 @@
 						<textarea class="form-control" name="body" id="textarea1"
 							cols="30" rows="10" readonly>${board.body }</textarea>
 					</div>
-					
-					<div>
-						<img src="file:///C:/imgtmp/board/${board.id }/${board.fileName }" alt="" />
-					</div>
+					<c:forEach items="${board.fileName }" var="file">
+						<div>
+							<img src="${imageUrl }/board/${board.id }/${file }" alt="" />
+						</div>
+					</c:forEach>
 					
 					<div>
 						<label for="input3" class="form-label">작성자</label>
