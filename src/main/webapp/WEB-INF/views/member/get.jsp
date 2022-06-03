@@ -159,30 +159,66 @@
 <body>
 	<my:navBar current="memberInfo"></my:navBar>
 	
-	<c:if test="${not empty message }">
-		<div class="alert alert-primary">
-			${message }
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-6">
+			
+				<h1>회원 정보 보기</h1>
+				
+				<div>
+					<p>${message }</p>
+				</div>
+				
+				<div>
+					<label for="idInput1" class="form-label">
+						ID
+					</label>
+					<input id="idInput1" class="form-control" type="text" value="${member.id }" readonly/>
+					
+					<label for="passwordInput1" class="form-label">
+						PassWord
+					</label>
+					<input class="form-control" id="passwordInput1" type="text" value=""  />
+
+					<label for="passwordInput2" class="form-label">
+						PassWord Check
+					</label>
+					<input class="form-control" id="passwordInput2" type="text" value=""  />
+					
+					<p class="form-text" id="passwordMessage1"></p>
+					
+					<label for="emailInput1" class="form-label">
+						Email
+					</label>
+					<div class="input-group">
+						<input id="emailInput1" class="form-control" type="email" value="${member.email }" /> 
+						<button id="emailCheckButton1"  class="btn btn-secondary" disabled>이메일 중복확인</button>
+					</div>
+					
+					<p class="form-text" id="emailMessage1"></p>
+					
+					<label for="nickNameInput1" class="form-label">
+						NickName
+					</label>
+					<div class="input-group">
+						<input id="nickNameInput1" class="form-control" type="text" value="${member.nickName }" /> 
+						<button id="nickNameCheckButton1" class="btn btn-secondary" disabled>닉네임중복확인</button>
+					</div>
+					
+					<p id="nickNameMessage1" class="form-text"></p>
+
+					<label for="" class="form-label">
+						가입일
+					</label>
+					<input class="form-control" type="datetime-local" value="${member.inserted }" readonly />
+				</div>
+				
+				<div class="mt-3">
+					<button id="editButton1" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal2" disabled>수정</button>
+					<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal1">삭제</button>
+				</div>
+			</div>
 		</div>
-	</c:if>
-	
-	<div>
-		ID : <input name="id" type="text" value="${member.id }"/><br />
-		암호 : <input id="passwordInput1" type="text" value="${member.password }"/><br />
-		암호 확인 : <input id="passwordInput2" type="text" value="${member.password }"/><br />
-		<p id="passwordMessage1"></p>
-		<br />
-		Email : <input id="emailInput1" name="email" type="email" value="${member.email }"/> <button id="checkEmailButton1" disabled>이메일 중복 확인</button> <br />
-		<p id="emailMessage1"></p>
-		<br />
-		닉네임 : <input id="nickNameInput1" name="nickName" type="text" value="${member.nickName }"/> <button id="checkNickNameButton1" disabled>닉네임 중복 확인</button> <br />
-		<p id="nickNameMessage1"></p>
-		<br />
-		가입일 : <input type="datetime-local" value="${member.inserted }"/><br />
-	</div>
-	
-	<div>
-		<button id="editButton1" data-bs-toggle="modal" data-bs-target="#modal2" disabled>수정</button>
-		<button data-bs-toggle="modal" data-bs-target="#modal1">삭제</button>
 	</div>
 	
 	<!-- delete Modal -->
@@ -191,14 +227,17 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel1">기존 암호 입력</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<form id="form1" action="${appRoot }/member/remove" method="post">
 						<input type="hidden" value="${member.id }" name="id"/>
-						암호 : <input type="text" name="password"/>
+						<label for="passwordInput3" class="form-label">
+				        	PassWord
+				        </label>
+				        <input id="passwordInput3" class="form-control" type="text" name="password" />
 					</form>
 				</div>
 				<div class="modal-footer">
@@ -215,7 +254,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel2">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel2">기존 암호 입력</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
@@ -225,7 +264,10 @@
 						<input type="hidden" name="password"/>
 						<input type="hidden" name="email"/>
 						<input type="hidden" name="nickName"/>
-						암호 : <input type="text" name="oldPassword"/>
+						<label for="passwordInput4" class="form-label">
+		     				기존 암호 
+	        			</label>
+	        			<input id="passwordInput4" class="form-control" type="text" name="oldPassword" />
 					</form>
 				</div>
 				<div class="modal-footer">

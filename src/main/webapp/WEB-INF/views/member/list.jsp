@@ -16,35 +16,44 @@
 </head>
 <body>
 	<my:navBar current="memberList"></my:navBar>
-	
-	<table class="table">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>비밀번호</th>
-				<th>이메일</th>
-				<th>닉네임</th>
-				<th>가입일</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${memberList }" var="member">
-				<tr>
-					<td>
-						<c:url value="/member/get" var="getMemberUrl">
-							<c:param name="id" value="${member.id }"></c:param>
-						</c:url>
-						<a href="${getMemberUrl }">
-							${member.id }
-						</a>
-					</td>
-					<td>${member.password }</td>
-					<td>${member.email }</td>
-					<td>${member.nickName }</td>
-					<td>${member.inserted }</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+		
+	<div class="container">
+		<div class="row">
+			<div class="col">
+
+				<h1>회원 목록</h1>
+				
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>PassWord</th>
+							<th>Email</th>
+							<th>NickName</th>
+							<th>가입일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${memberList }" var="member">
+							<tr>
+								<td>
+									<c:url value="/member/get" var="getMemberUrl">
+										<c:param name="id" value="${member.id }"></c:param>
+									</c:url>
+									<a href="${getMemberUrl }">
+										${member.id }
+									</a>
+								</td>
+								<td>${member.password }</td>
+								<td>${member.email }</td>
+								<td>${member.nickName }</td>
+								<td>${member.inserted }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

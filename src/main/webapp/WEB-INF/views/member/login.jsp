@@ -16,15 +16,33 @@
 </head>
 <body>
 	<my:navBar current="login"></my:navBar>
-	
-	<h1>로그인</h1>
-	
-	<form action="${appRoot }/login" method="post">
-		ID : <input type="text" name="username"/> <br />
-		PassWord : <input type="password" name="password"/> <br />
-		<input type="checkbox" name="remember-me" id=""/> 자동로그인 <br />
-		<input type="submit" value="로그인"/>
-	</form>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-6">
+				<h1>로그인</h1>
+			
+				<form action="${appRoot }/login" method="post">
+					<label for="userIdInput1" class="form-label">
+						ID 
+					</label>
+					<input id="userIdInput" class="form-control" type="text" name="username"/>
+					
+					<label for="userPwInput1" class="form-label">
+						PassWord
+					</label>
+					<input id="userPwInput1" class="form-control" type="password" name="password"/>
+					
+					<div class="form-check">
+						<input id="rememberMeCheck1" class="form-check-input" type="checkbox" name="remember-me" />
+						 <label for="rememberMeCheck1">
+							 자동로그인
+						 </label>
+					</div>
+						<input class="btn btn-primary" type="submit" value="로그인"/>
+				</form>
+			</div>
+		</div>
+	</div>
 	
 </body>
 </html>
